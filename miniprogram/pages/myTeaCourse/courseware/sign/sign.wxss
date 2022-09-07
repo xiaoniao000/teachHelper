@@ -1,0 +1,15 @@
+/* pages/myTeaCourse/courseware/sign/sign.wxss */
+
+#myMap{
+  width: 750rpx;
+  height: 400rpx;
+}
+
+  .sign-in{
+    text-align: center;
+  } 
+    .sign-img{
+      margin-top: 328rpx;
+      height: 144rpx;
+      width: 144rpx;
+    }

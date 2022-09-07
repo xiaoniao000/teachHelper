@@ -1,0 +1,10 @@
+<!--pages/myTeaCourse/preview/resultChart/resultChart.wxml-->
+<view class=' flex-subradius' wx:if='{{showLoading}}'>
+  <image src='https://image.weilanwl.com/gif/loading-1.gif' mode='aspectFit' class='gif-white response' style='height:240rpx;margin-top:400rpx;'></image>
+</view>
+<view wx:else>
+  <view class='chart-title'>正确率图表(目前共{{preview.resultPerAuthor.length}}人答题)</view>
+  <canvas canvas-id="radarCanvas" class="canvas" bindtouchstart="toastAccuracy"></canvas>
+  <view class='chart-title'>成绩分布表</view>
+  <canvas canvas-id="pieCanvas" class="canvas" style="height:300px" bindtouchstart="touchHandler"></canvas>
+</view>

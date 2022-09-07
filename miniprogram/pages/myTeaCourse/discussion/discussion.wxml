@@ -1,0 +1,53 @@
+<!--pages/myTeaCourse/discussion/discussion.wxml-->
+<view class="cu-card dynamic no-card">
+  <view class="cu-item shadow">
+    <view class="cu-list menu menu-avatar">
+      <view class="cu-item">
+        <view class="cu-avatar round lg" style="background-image:url({{post.author.avatarUrl}});"></view>
+        <view class='content flex-sub'>
+          <view>{{post.author.nickName}}</view>
+          <view class='text-gray text-sm flex justify-between'>
+            {{post.createAt}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='text-content'>{{post.content}}</view>
+    <view class="grid col-3 grid-square flex-sub padding-lr">
+      <view id='{{index}}' class="bg-img" style="background-image:url({{image}});" wx:for="{{post.images}}" wx:key wx:for-item="image" bindtap='onImagePreview'>
+      </view>
+    </view>
+    <view class='text-gray text-sm text-right padding'>
+      <text class="icon-attentionfill text-{{post.visitColor}}"></text>{{post.visitCount}}
+      <text class="icon-appreciatefill text-{{post.zanColor}}" catchtap='onTapZan'></text>{{post.zanCount}}
+      <text class="icon-messagefill text-{{post.replyColor}}"></text> {{post.replyCount}}
+    </view>
+    <view class="cu-list menu menu-avatar comment solids-top">
+      <view class="cu-item" wx:for="{{post.replies}}" wx:key wx:for-item="reply">
+        <view class="cu-avatar round" style="background-image:url({{reply.author.avatarUrl}});"></view>
+        <view class='content'>
+          <view class='text-grey'>{{reply.author.nickName}}</view>
+          <view class='text-gray text-content text-df'>{{reply.content}}</view>
+          <!-- <view class='bg-grey padding-sm radius margin-top-sm text-sm'>
+            <view class="flex {{index!=0?'margin-top-sm':'' }}" wx:for="{{2}}" wx:key>
+              <view>我：</view>
+              <view class='flex-sub'>我家的铲屎官也不舔毛！</view>
+            </view>
+          </view> -->
+          <view class='margin-top-sm flex justify-between text-sm '>
+            <view class='text-gray text-df'>{{reply.lastReplyAt}}</view>
+            <!-- <view>
+              <text class="icon-appreciatefill text-{{reply.ups.length>0?'red':'gray'}}"></text>
+              <text class='text-gray' catchtap='onTapZan'>{{reply.zanCount}}</text>
+              <text class="icon-messagefill text-gray margin-left-sm"></text>
+              <text class='text-gray'>{{reply.replyCount}}</text>
+            </view> -->
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 浮动按钮 -->
+<wux-fab-button position="bottomRight" theme="balanced" direction="circle" sAngle='180' backdrop="true" reverse="{{false}}" spaceBetween="10" buttons="{{ floatButtons }}" bind:change="onFloBtnChange" bind:click="onFloBtnClick" />

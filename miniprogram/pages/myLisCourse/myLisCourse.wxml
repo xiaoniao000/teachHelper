@@ -1,0 +1,176 @@
+<!-- van组件 滑动tap页 -->
+<van-tabs animated color="rgb(57, 181, 74)" swipeable="true" sticky="true">
+  <!-- 课前预习 -->
+  <van-tab title="课前预习">
+    <view class="cu-list menu sm-border card-menu margin-top" wx:for="{{previewList}}" wx:key>
+      <view class="cu-item arrow" id='{{index}}' bindtap='onPreviewTest'>
+        <view class='content'>
+          <text class='icon-formfill text-red'></text>
+          <text class='text-grey'>{{item.name}}</text>
+        </view>
+        <view class='action'>
+          <view class="cu-tag round bg-olive light">{{item.createTime}}</view>
+        </view>
+      </view>
+      <i-load-more tip="{{showPrevLoading?'正在加载中':'没有更多预习测验了'}}" loading="{{showPrevLoading}}" wx:if='{{previewList.length == index +1}}' />
+    </view>
+    <!-- 提示窗 -->
+    <view class='prompt' wx:if='{{previewList.length==0}}'>
+      <view class='icon-discoverfill text-red iconNoStatus animation-{{animation}} '></view>
+      <view style='font-size:34rpx;font-weight:900 '>空空如也</view>
+      <view class='text-gray '>暂时还没有预习测验发布</view>
+    </view>
+  </van-tab>
+  <!-- 听课 课件 -->
+  <van-tab title="开始听课">
+    <view class="cu-timeline" wx:if="{{coursewareList.length}}">
+      <!-- 关于时间的问题先保留 -->
+      <view class="cu-time">{{"课件列表"}}</view>
+      <!-- 设想，黄色表示未看过，绿色表示看过 -->
+      <view class="cu-item text-blue" wx:for="{{coursewareList}}" wx:key id="{{index}}" catchtap='onCourseware'>
+        <view class="content">
+          <view class="cu-capsule radius">
+            <view class="cu-tag bg-cyan">{{!item.type?"视频":"PPT文档"}}</view>
+            <view class="cu-tag line-cyan">{{item.monthDay}} {{item.minSecond}}</view>
+          </view>
+          <view class='margin-top '>{{item.name}}</view>
+          <image class='coursewareCover' src='{{item.cover}}'></image>
+        </view>
+      </view>
+    </view>
+    <i-load-more tip="{{showCwLoading?'正在加载中':'没有更多课件了 '}}" loading="{{showCwLoading}}" wx:if='{{coursewareList.length!=0}}' />
+    <!-- 提示窗 -->
+    <view class='prompt' wx:if='{{coursewareList.length==0}}'>
+      <view class='icon-discoverfill text-red iconNoStatus animation-{{animation}} '></view>
+      <view style='font-size:34rpx;font-weight:900 '>空空如也</view>
+      <view class='text-gray '>暂时还没有课件发布</view>
+    </view>
+    <van-popup z-index="1600" show="{{ drawerShow }}" position="bottom" bind:close="onClose">
+      <view class="cu-list grid col-{{gridCol}} {{gridBorder?' ':'no-border '}}">
+        <view id="{{index}}" class="cu-item" wx:for="{{iconList}}" wx:key wx:if="{{index<gridCol*2}}" bindtap="onTapDrawerGrid">
+          <view class='icon-{{item.icon}} text-{{item.color}} '>
+            <view class="cu-tag badge" wx:if="{{item.badge!=0}}">
+              <block wx:if="{{item.badge!=1}}">{{item.badge>99?'99+ ':item.badge}}</block>
+            </view>
+          </view>
+          <text>{{item.name}}</text>
+        </view>
+      </view>
+    </van-popup>
+  </van-tab>
+  <!-- 讨论区 -->
+  <van-tab title="讨论区">
+    <view id="{{index}}" class="cu-card dynamic" wx:for="{{postList}}" wx:key bindtap='onTapPost'>
+      <view class="cu-item shadow">
+        <view class="cu-list menu menu-avatar">
+          <view class="cu-item">
+            <view class="cu-avatar round lg" style="background-image:url({{item.author.avatarUrl}});"></view>
+            <view class='content flex-sub'>
+              <view>{{item.author.nickName}}</view>
+              <view class='text-gray text-sm flex justify-between'>
+                {{item.createAt}}
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='text-content'>{{item.content}}</view>
+        <view class="grid col-1 flex-sub padding-lr">
+          <view id="{{index}}" class="bg-img only-img" style="background-image:url({{image}});" wx:for="{{item.images}}" wx:key wx:for-item="image" catchtap='onImagePreview'>
+          </view>
+        </view>
+        <!--  访客数 点赞 评论 -->
+        <view class='text-gray text-right padding'>
+          <text class="icon-attentionfill text-{{postList[index].visitColor}}"></text>{{item.visitCount}}
+          <text class="icon-appreciatefill text-{{postList[index].zanColor}}"></text>{{item.zanCount}}
+          <text class="icon-messagefill text-{{postList[index].replyColor}}"></text> {{item.replyCount}}
+        </view>
+        <view class="cu-list menu menu-avatar comment solids-top">
+          <view class="cu-item" wx:for="{{item.replies}}" wx:key wx:for-item="reply" wx:if="{{index<2}}">
+            <view class="cu-avatar round" style="background-image:url({{reply.author.avatarUrl}});"></view>
+            <view class='content'>
+              <view class='text-grey'>{{reply.author.nickName}}</view>
+              <view class='text-gray text-content text-df'>
+                {{reply.content}}
+              </view>
+              <!-- <view class='bg-grey padding-sm radius margin-top-sm  text-sm' wx:if="{{index==1}}">
+                <view class="flex {{index!=0?'margin-top-sm':'' }}" wx:for="{{2}}" wx:key>
+                  <view>我：</view>
+                  <view class='flex-sub'>我家的铲屎官也不舔毛！</view>
+                </view>
+              </view> -->
+              <view class='margin-top-sm flex justify-between text-sm text-gray'>
+                <!-- 评论时间 -->
+                <view>{{reply.lastReplyAt}}</view>
+                <!-- 评论 点赞 -->
+                <!-- <view>
+                  <text class="icon-appreciate{{isZan?'fill':''}} text-{{isZan?'red':'gray'}}"></text>
+                  <text>{{reply.replyCount}}</text>
+                  <text class="icon-messagefill"></text>
+                  <text>{{reply.zanCount}}</text>
+                </view> -->
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <i-load-more tip="{{showPostLoading?'正在加载中':'没有帖子了啦'}}" loading="{{showPostLoading}}" wx:if='{{postList.length == index +1}}' />
+    </view>
+    <!-- 提示窗 -->
+    <view class='prompt' wx:if='{{postList.length==0}}'>
+      <view class='icon-discoverfill text-red iconNoStatus animation-{{animation}} '></view>
+      <view style='font-size:34rpx;font-weight:900 '>空空如也</view>
+      <view class='text-gray '>暂时还没有人发帖</view>
+    </view>
+  </van-tab>
+  <!-- 课后作业 -->
+  <van-tab title="课后作业">
+    <!-- 提示窗 -->
+    <view class='prompt'>
+      <view class='icon-discoverfill text-red iconNoStatus animation-{{animation}} '></view>
+      <view style='font-size:34rpx;font-weight:900 '>空空如也</view>
+      <view class='text-gray '>暂时还没有课后作业发布哦</view>
+    </view>
+  </van-tab>
+  <!-- 公告 -->
+  <van-tab title="公告">
+    <view style='margin-top:26rpx;' wx:for="{{annList}}" wx:key bindtap='annCardTap' data-tap='{{index}}'>
+      <w-card class="ann-cards">
+        <view slot="title" class="w-card-title" hover-class="none" hover-stop-propagation="false">{{item.title}}</view>
+        <view slot="extra" class="w-card-extra" hover-class="none" hover-stop-propagation="false">{{item.author.nickName}}</view>
+        <view slot="content" class="w-card-content" hover-class="none" hover-stop-propagation="false">{{item.content}}</view>
+        <view slot="footer" class="w-card-footer" hover-class="none" hover-stop-propagation="false">{{item.viewCount}}人已读</view>
+        <view slot="footer-extra" class="w-card-footer-extra" hover-class="none" hover-stop-propagation="false">{{item.createTime}}</view>
+      </w-card>
+    </view>
+    <!-- 提示窗 -->
+    <view class='prompt' wx:if="{{annList==0}}">
+      <view class='icon-discoverfill text-red iconNoStatus animation-{{animation}}'></view>
+      <view style='font-size:34rpx;font-weight:900'>空空如也</view>
+      <view class='text-gray'>暂时还没有公告哦</view>
+    </view>
+  </van-tab>
+  <!-- 资料分享 -->
+  <van-tab title="资料分享">
+    <van-card wx:for='{{fileList}}' centered title-class='card-title' bindtap="onFileDetail" custom-class='van-card' desc="{{item.createAt}}" title="{{item.name}}" thumb='{{item.cover}}' id="{{index}}" tag='{{item.type? "文档": "视频"}} '
+      wx:key>
+      <view slot="tags">
+        <van-tag plain type="primary">精华</van-tag>
+        <van-tag plain type="danger">置顶</van-tag>
+      </view>
+    </van-card>
+    <!-- 提示窗 -->
+    <view class='prompt ' wx:if='{{fileList.length==0}}'>
+      <view class='icon-discoverfill text-red iconNoStatus animation-{{animation}} '></view>
+      <view style='font-size:34rpx;font-weight:900 '>空空如也</view>
+      <view class='text-gray '>暂时还没有人分享资料</view>
+    </view>
+    <i-modal title="选择要发布的文件类型" visible="{{ visible4 }}" actions="{{ actions4 }}" action-mode="{{ vertical }}" bind:click="handleClick4"></i-modal>
+    <wux-dialog id="wux-dialog" />
+    <wux-dialog id="wux-dialog--alert" />
+  </van-tab>
+</van-tabs>
+
+
+
+<!-- 浮动按钮 -->
+<wux-fab-button position="bottomRight" theme="balanced" direction="vertical" backdrop="false" reverse="{{false}}" spaceBetween="10" buttons="{{ floatButtons }}" bind:change="onFloBtnChange" bind:click="onFloBtnClick" />

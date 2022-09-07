@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "教学小助手",
+  "usingComponents": {
+    "wux-button": "/dist/button/index"
+  }
+}

@@ -1,0 +1,129 @@
+/* pages/course/course.wxss */
+
+/* 轮播图 */
+.card-swiper{
+  height: 380rpx;
+}
+
+/* page_head */
+  .page_head{
+    width: 100%;
+    background-color: #fff;
+    color: #101010;
+    margin-bottom: 10px;
+  }
+    .estCourse{
+      height: 100%;
+      width: 49.5%;
+      float: left;
+    }
+      .page_hd_img{
+        margin: 21px auto 0 auto;
+        height: 36px;
+        width: 36px;
+      }
+        .page_hd_img image{
+          max-width: 100%;
+          height: 100%;
+        }
+        .page_head_btn{
+          margin: 20rpx auto;
+          height: 20px;
+          width: 56px;
+          border-radius: 4px;
+          padding: auto auto;
+          font-size: 14px;
+          border: 0;
+        }
+    .ver-line{
+      height: 70px;
+      border-left: 1px solid #BBBBBB;
+      width: 0;
+      float: left;
+      margin-top: 15px;
+    }
+    .getCourse{
+      height: 100%;
+      width: 49.5%;
+      float: left;
+    }
+
+/*  课程 */
+.course{
+  height: 180rpx;
+  width: 80%;
+  margin: 50rpx auto 0 auto;
+  box-shadow: 4px 4px 20px rgba(57, 181, 74,0.3);
+  border-radius: 8rpx;
+  color: white;
+  position: relative;
+}
+  .c-arrow{
+    position: absolute;
+    top: 12%;
+    right: 20rpx;
+    height: 50rpx;
+    width: 50rpx;
+    z-index: 100;
+  }
+
+  .clip{
+    position: absolute;
+    top: -30rpx;
+    left: -30rpx;
+    height: 80rpx;
+    width: 80rpx;
+    z-index: 100;
+  }
+  .cInfo{
+    padding: 20rpx 40rpx;
+    font-size: 28rpx;
+  }
+    .cMajor{
+      float: left;
+      overflow: hidden;
+      height: 40rpx;
+    }
+    .float-right{
+      float: right;
+    }
+      .cMajImg{
+        float: right;
+      }
+      .cPeople{
+        float: right
+      }
+      .cu-bar .action.sub-title text[class*="bg-"]:last-child{
+        width:150rpx
+      }
+
+.abs{
+  position: fixed;
+  height: 240rpx;
+  width: 240rpx;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+  margin-top: -120rpx;
+  margin-left: -120rpx;
+}
+/* 加载更多 */
+.cell {
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 90rpx;
+}
+
+  .get-more-ques{
+    text-align: center;
+    font-size: 24rpx;
+    margin-bottom: 70rpx;
+    color: #666;
+    margin-top: 90rpx;
+  }

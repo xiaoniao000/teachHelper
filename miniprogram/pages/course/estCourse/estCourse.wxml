@@ -1,0 +1,19 @@
+<!--pages/estCourse/estCourse.wxml-->
+<view class='estBox'>
+  <form>
+    <!-- <image class='clip' src='../../../image/clip.png'></image> -->
+    <view class='box-content'>
+      <view class='box-content-card'>
+        <view class="input-item-label">课程名称</view>
+        <input class="input-item-content" type='text' placeholder='请输入课程名称' value='{{cName}}' bindinput='cNameInput'>
+        </input>
+      </view>
+      <view class='box-content-card'>
+        <view class="input-item-label">专业班级</view>
+        <input class="input-item-content" type='text' placeholder='请输入班级名称' value='{{className}}' bindinput='classNameInput'>
+        </input>
+      </view>
+    </view>
+    <button class='finish' bindtap="finish">完成</button>
+  </form>
+</view>

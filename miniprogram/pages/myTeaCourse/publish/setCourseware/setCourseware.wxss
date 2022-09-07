@@ -1,0 +1,58 @@
+/* pages/myTeaCourse/publish/setCourseware/setCourseware.wxss */
+
+.out {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: whitesmoke;
+}
+
+.courseware {
+  background-color: white;
+  width: 238px;
+  height: 350px;
+  line-height: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 2px 2px 4px 0px rgba(170, 170, 170, 1);
+  border: 1px solid rgba(187, 187, 187, 1);
+}
+
+.text1 {
+  margin: 39px 55px 120px 55px;
+  color: rgba(16, 16, 16, 1);
+  font-size: 16px;
+  text-align: left;
+  font-family: PingFangSC-regular;
+}
+
+.area1 {
+  width: 66px;
+  height: 48px;
+  float: left;
+}
+
+.area {
+  width: 48px;
+  height: 48px;
+  float: left;
+}
+
+.area2 {
+  width: 15px;
+  height: 48px;
+  float: left;
+}
+
+.area image {
+  width: 48px;
+  height: 55px;
+}
+
+.text {
+  margin-left: 3rpx;
+  font-size: 12px;
+  line-height: 14px;
+}

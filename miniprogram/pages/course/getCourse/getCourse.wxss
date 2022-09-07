@@ -1,0 +1,80 @@
+/* pages/getCourse/getCourse.wxss */
+@import "/component/wxSearch/wxSearch.wxss";
+.wxSearchKeyItem{
+  flex:0 0 auto;
+}
+
+
+/*  课程 */
+.course{
+  height: 180rpx;
+  width: 80%;
+  margin: 50rpx auto 0 auto;
+  box-shadow: 4px 4px 20px rgba(57, 181, 74,0.3);
+  border-radius: 8rpx;
+  color: white;
+  position: relative;
+}
+  .c-arrow{
+    position: absolute;
+    top: 12%;
+    right: 10px;
+    height: 25px;
+    width: 25px;
+    z-index: 10;
+  }
+
+  .clip{
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    height: 40px;
+    width: 40px;
+    z-index: 10;
+  }
+  .cInfo{
+    padding: 20rpx 40rpx;
+    font-size: 28rpx;
+  }
+    .cMajor{
+      float: left;
+      overflow: hidden;
+      height: 40rpx;
+    }
+    .float-right{
+      float: right;
+    }
+      .cMajImg{
+        padding-top: 4rpx;
+        padding-right: 2rpx;
+        height: 36rpx;
+        width: 36rpx;
+        float: right;
+      }
+      .cPeople{
+        float: right
+      }
+
+.abs{
+  position: fixed;
+  height: 240rpx;
+  width: 240rpx;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+  margin-top: -120rpx;
+  margin-left: -120rpx;
+}
+/* 提示窗 */
+.prompt{
+  margin-top: 200rpx;
+  height: 400rpx;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.iconNoStatus{
+  font-size:170rpx;
+}

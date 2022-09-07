@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "随机点名",
+  "usingComponents": {
+    "van-button": "vant-weapp/button/index"
+  }
+}

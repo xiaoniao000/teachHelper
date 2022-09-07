@@ -1,0 +1,19 @@
+<!--pages/myTeaCourse/homework/homeworkTitles/homeworkTitles.wxml-->
+<view class="cu-list menu sm-border card-menu margin-top" wx:for="{{homeworkList}}" wx:key>
+  <view class="cu-item arrow" id='{{index}}' bindtap='onHomework'>
+    <view class='content'>
+      <text class='icon-formfill text-red'></text>
+      <text class='text-grey'>{{item.name==''?'未命名':item.name}}</text>
+    </view>
+    <view class='action'>
+      <view class="cu-tag round bg-olive light">{{item.createTime}}</view>
+    </view>
+  </view>
+  <i-load-more tip="{{showPrevLoading?'正在加载中':'没有更多课后作业了'}}" loading="{{showPrevLoading}}" wx:if='{{homeworkList.length == index+1}}' />
+</view>
+<!-- 提示窗 -->
+<view class='prompt' wx:if='{{homeworkList.length == 0}}'>
+  <view class='icon-discoverfill text-red iconNoStatus animation-{{animation}}'></view>
+  <view style='font-size:34rpx;font-weight:900'>空空如也</view>
+  <view class='text-gray'>暂时还没有创建过课后作业</view>
+</view>

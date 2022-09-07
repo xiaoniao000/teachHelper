@@ -1,0 +1,78 @@
+/* pages/myLisCourse/preview/preview.wxss */
+/* 判断题的switch */
+.setting{
+  background-color: #fff;
+  font-size: 28rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 42rpx;
+}
+  .w-cell{
+    float: right;
+    margin: 8rpx  30rpx 0 0;
+    color: rgb(36, 36, 37);
+  }
+.judge-head{
+  height:92rpx;
+  line-height: 92rpx;
+  padding-left: 30rpx;
+  color: #888;
+}
+  .textarea{
+    margin: 40rpx auto 40rpx auto;
+    width: 85%;
+    border: 1rpx solid #f0f0f0;
+    padding: 20rpx;
+    color: #949494;
+    border-radius: 10rpx;
+    height: 220rpx;
+    line-height: 30rpx;
+    font-size: 28rpx;
+  }
+
+  /* 选项 */
+  .options{
+    background-color: #fff;
+  }
+    .width{
+      width:85%;
+      margin: 0 auto;
+    }
+    .bgcolor{
+      background-color: #F3F4F6;
+      height: 50rpx;
+      line-height: 50rpx;
+    }
+    .input-options{
+      border-bottom: 1rpx #ccc solid;
+      height: 76rpx;
+      line-height: 76rpx;
+      color: #949494;
+      position: relative;
+    }
+      .remove-options{
+        font-size: 30rpx;
+      }
+      .input-text{
+        display: inline-block;
+        font-size: 26rpx;
+        width: 80%;
+        height: 52rpx;
+        position: absolute;
+        top: 50%;
+        margin-left: 10rpx;
+        margin-top: -26rpx;
+      }
+      .float-right{
+        float: right;
+      }
+    .add-options{
+      background-color: #fff;
+      height: 76rpx;
+      line-height: 76rpx;
+    }
+      .add-text{
+        color:rgb(84, 144, 214);
+        font-size: 28rpx;
+        padding-left: 6rpx;
+      }

@@ -1,0 +1,16 @@
+<!--pages/announce/announce.wxml-->
+<view class='page'>
+  <view class='ann-box'>
+    <image class='ann-box-img' src='../../../images/clip.png'></image>
+    <view class='ann-time'>
+      <text>{{time}}</text>
+    </view>
+    <view class='ann-content'> 
+      <text>{{content}}</text>
+    </view>
+    <button  class='finish' 
+      loading="{{loading}}"
+      bindtap="finish">确认
+    </button>
+  </view>
+</view>

@@ -1,0 +1,18 @@
+/* pages/myLisCourse/fileDetail/fileDetail.wxss */
+.page-body{
+  width: 100%;
+}
+.videoBox{
+  margin: 30rpx auto;
+  position: relative;
+}
+#myVideo{
+  position: relative;
+  top: 0;
+  left: 50%;
+  margin-left: -150px;
+}
+.page-body-button {
+  margin: 50rpx auto;
+  width: 80%;
+}

@@ -1,0 +1,13 @@
+<!--pages/myLisCourse/fileDetail/fileDetail.wxml-->
+<view class="page-body">
+  <view class="videoBox">
+    <video id="myVideo" src="{{file.fileUrl}}" binderror="videoErrorCallback" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls></video>
+  </view>
+  <w-input bind:onBlur="bindInputBlur" placeholder="请输入..." label="弹幕内容" clear>
+  </w-input>
+  <view class="btn-area">
+    <button bindtap="bindSendDanmu" class="page-body-button" type="primary" formType="submit">发送弹幕</button>
+    <button bindtap="bindDownload" class="page-body-button" type="primary">下载视频</button>
+  </view>
+
+</view>

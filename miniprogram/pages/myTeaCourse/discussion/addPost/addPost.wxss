@@ -1,0 +1,5 @@
+/* pages/myTeaCourse/discussion/addPost/addPost.wxss */
+.page{
+  height: 100vh;
+  background-color: #fff;
+}

@@ -1,0 +1,46 @@
+<!--pages/notice/notice.wxml-->
+<view class='blank'></view>
+<view class='private-news' bindtap='privateNews'>
+  <view class='padding'>
+    <view class='icon-envelope icon-newfill text-orange'></view>
+    <view class='content'>
+      <view class='con-head'>私信</view>
+      <view class='con-body over-1-hidden'>{{"今天的老师讲课真的好有趣。"}}</view>
+    </view>
+    <view class='action padding-top'>
+      <view class="cu-avatar-group">
+        <view class="cu-avatar round sm" style="background-image:url(https://image.weilanwl.com/img/square-4.jpg);"></view>
+        <view class="cu-avatar round sm" style="background-image:url(https://image.weilanwl.com/img/square-3.jpg);"></view>
+        <view class="cu-avatar round sm" style="background-image:url(https://image.weilanwl.com/img/square-2.jpg);"></view>
+        <view class="cu-avatar round sm" style="background-image:url(https://image.weilanwl.com/img/square-1.jpg);"></view>
+      </view>
+      <text class='text-grey text-sm'>4 人</text>
+    </view>
+  </view>
+</view>
+
+<!-- 通知列表 -->
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class='action'>
+    <text class='icon-title text-green '></text> 通知列表
+  </view>
+</view>
+<view class="cu-list menu menu-avatar">
+  <view id="{{index}}" class="cu-item {{modalName=='move-box-'+ index?'move-cur':''}}" wx:for="{{4}}" wx:key bindtouchstart='ListTouchStart' bindtouchmove='ListTouchMove' bindtouchend='ListTouchEnd' data-target="move-box-{{index}}" bindtap='tapToNoticeDetial'>
+    <view class="cu-avatar round lg" style="background-image:url(https://image.weilanwl.com/img/square-{{index+1}}.jpg);"></view>
+    <view class='content'>
+      <view class='text-grey'>路人甲</view>
+      <view class='text-gray text-sm'>
+        <text class='icon-infofill text-red'></text> 消息未送达</view>
+    </view>
+    <view class='action'>
+      <view class='text-grey text-xs'>22:20</view>
+      <view class="cu-tag round bg-grey sm">5</view>
+    </view>
+    <view class='move'>
+      <view class='bg-grey'>置顶</view>
+      <view class="bg-red">删除</view>
+    </view>
+  </view>
+</view>
+<!-- <vpush-view>点击我收集凭证</vpush-view> -->

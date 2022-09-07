@@ -1,0 +1,83 @@
+page{
+  background-color: #f3f4f6;
+}
+.bar {
+  height: 90rpx;
+  background-color: #fff;
+  line-height: 90rpx;
+}
+.func {
+  background: #fff;
+  text-align: center;
+}
+.func-text {
+  margin-bottom: 14rpx;
+  font-size: 26rpx;
+  color: #333;
+}
+
+/* 题目列表 */
+.title{
+  background: #fff;
+  margin-top: 20rpx;
+}
+.padding{
+  padding: 20rpx 30rpx;
+}
+  .title-head{
+    font-size: 28rpx;
+  }
+
+  .title-body{
+    line-height: 40rpx;
+    font-size: 26rpx;
+  }
+    .textarea{
+      height: 60rpx;
+      width: 90%;
+      margin: 30rpx auto 10rpx auto;
+      border: 1rpx solid rgb(227, 227, 227);
+      border-radius: 6rpx;
+    }
+    .answer{
+      padding-left: 20rpx;
+    }
+    .circle{
+      font-size: 30rpx;
+    }
+  .change-title{
+    border-top: 1rpx solid rgb(227, 227, 227);
+    height: 102rpx;
+    width: 100%;
+    background: rgb(250, 251, 255);
+    color: #949494;
+    font-size: 20rpx;
+    text-align: center;
+  }
+    .part{
+      width: 25%;
+      float: left;
+    }
+      .change-title-img{
+        font-size: 40rpx;
+      }
+.add-title{
+  height: 60rpx;
+  width: 80%;
+  margin: 50rpx auto 150rpx auto;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 24rpx;
+  background: #fff;
+  border: 1rpx dotted rgb(227, 227, 227);
+}
+.add-title{
+  margin: 50rpx auto 150rpx auto;
+  background: #fff;
+}
+
+.positionatbottom{
+  position: fixed;
+  bottom: 0;
+  width: 100%
+}

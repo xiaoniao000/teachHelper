@@ -1,0 +1,9 @@
+<!--pages/announce/announce.wxml-->
+<view class='page'>
+  <!-- 标题和内容 -->
+  <w-input bind:onChange="titleChange" value='{{title}}' placeholder="这里输入" label="标题" clear>
+  </w-input>
+  <w-input clear count="100" type="textarea" placeholder="请输入内容" bind:onChange="contentChange" value='{{content}}' />
+  <!-- 发布按钮 -->
+  <w-button ghost type="info" bind:onClick="submitForm">发布</w-button>
+</view>

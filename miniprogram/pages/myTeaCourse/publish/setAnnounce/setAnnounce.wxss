@@ -1,0 +1,5 @@
+/* pages/announce/announce.wxss */
+.page{
+  height: 100vh;
+  background-color: #fff;
+}

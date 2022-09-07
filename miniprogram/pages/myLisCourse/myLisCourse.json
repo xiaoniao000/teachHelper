@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "我听的课",
+  "usingComponents": {
+    "i-modal": "../../dist/iview/modal/index",
+    "wux-dialog": "../../dist/dialog/index"
+  }
+}

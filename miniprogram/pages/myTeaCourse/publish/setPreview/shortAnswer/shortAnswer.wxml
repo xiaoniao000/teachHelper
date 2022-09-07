@@ -1,0 +1,7 @@
+<!--pages/myTeaCourse/publish/setPreview/shortAnswer/shortAnswer.wxml-->
+<view class='single-choice-title'>
+  <view class='head'>题目</view>
+  <textarea class='body' style='height:200rpx;' placeholder='请输入题目' value='{{optionsTitle}}' bindinput='onInputTitle'></textarea>
+</view>
+<button class='weui-btn submit' type='primary' bindtap='finishOptions'>确认</button>
+<i-toast id="toast" />

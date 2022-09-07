@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "教学小助手",
+  "pageOrientation": "auto",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "w-indicator": "wuss-weapp/w-activity-indicator/index",
+    "vpush-checkin": "/libs/vpush-pro-sdk/components/checkin"
+  }
+}

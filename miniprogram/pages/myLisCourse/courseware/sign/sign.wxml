@@ -1,0 +1,41 @@
+<!--pages/myTeaCourse/courseware/sign/sign.wxml-->
+<view wx:if="{{!openSign}}" class='sign-in'>
+  <image class='sign-img' src='/images/sign-blue.png'></image>
+</view>
+<map hidden="{{!openSign}}" id="myMap" show-location="true" scale="16" />
+
+<!-- 教师位置信息 -->
+<view class='sign-in' wx:if="{{openSign}}">
+  <view style='height:20rpx;'></view>
+  <view class='animation-slide-top cu-btn bg-blue shadow'>教师位置：{{tAddress}}</view>
+</view>
+
+<!-- 学生位置信息 -->
+<view class='sign-in' wx:if="{{openSign}}">
+  <view style='height:20rpx;'></view>
+  <view class='animation-slide-top cu-btn bg-blue shadow'>您的位置：{{sAddress}}</view>
+</view>
+
+<!-- 签到开关 -->
+<w-button ghost="{{openSign}}" type="info" catchtap='onSign'>{{openSign? "签到成功":"点击签到"}}</w-button>
+
+<!-- 签到学生列表 -->
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class='action'>
+    <text class='icon-title text-blue'></text> 签到列表
+  </view>
+</view>
+<view class="cu-list menu sm-border card-menu margin-top" wx:if="{{signList.length}}">
+  <view class="cu-item" wx:for="{{signList}}" wx:key id="{{index}}">
+    <view class='content'>
+      <!-- 头像 -->
+      <view class="cu-avatar round sm" style="background-image:url({{item.author.avatarUrl}});"></view>
+      <!-- <text class='icon-emojiflashfill text-blue'></text> -->
+      <text class='text-grey margin-left'>{{item.author.nickName}}</text>
+    </view>
+    <view class='action'>
+      <view class="cu-tag round bg-blue light">{{item.signTime}}</view>
+    </view>
+  </view>
+</view>
+<i-load-more  tip="{{signList.length?'没有更多了':'暂时没有人签到'}}" loading="{{ false }}" />

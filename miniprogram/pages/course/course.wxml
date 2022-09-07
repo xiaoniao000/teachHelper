@@ -1,0 +1,101 @@
+<!--pages/course/course.wxml-->
+<!-- 获取推送凭证 -->
+<!-- 由于外部推送的系统更新了，暂时无法使用  所以注释掉了 -->
+<!-- <vpush-checkin title="欢迎来到教学小助手" desc="祝您生活愉快"/> -->
+<!-- 轮播图 -->
+<swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+  <swiper-item wx:for="{{swiperImg}}" wx:key class="{{cardCur==index?'cur':''}}">
+    <view class='bg-img shadow-blur' style="background-image:url({{item}})"></view>
+  </swiper-item>
+</swiper>
+
+<view class='page_head'>
+  <navigator class='estCourse' url='/pages/course/estCourse/estCourse'>
+    <view class='page_hd_img'>
+      <image src='../../images/establish.png'></image>
+    </view>
+    <view>
+      <view class='page_head_btn'>创建课程</view>
+    </view>
+  </navigator>
+  <view class='ver-line'></view>
+  <navigator class='getCourse' url='/pages/course/getCourse/getCourse'>
+    <view class='page_hd_img'>
+      <image src='../../images/getClass.png'></image>
+    </view>
+    <view>
+      <view class='page_head_btn'>加入课程</view>
+    </view>
+  </navigator>
+  <view style='clear:both;height:0'></view>
+</view>
+
+<van-tabs animated color="rgb(57, 181, 74)" active="{{ activeIndex }}" bind:change="onTabChange">
+  <van-tab title="我教授的课程">
+    <view class='course bg-gradual-green shadow-lg' wx:for="{{courses_list}}" wx:key id='{{index}}' catchtap='onCourseDetail'>
+      <image class='clip' src="../../images/clip.png"></image>
+      <image class='c-arrow' src='../../images/forward.png'></image>
+      <view class="cu-bar bg-white">
+        <view class='action sub-title'>
+          <text class='text-xl text-bold text-green'>课程名称：{{item.courseName}}</text>
+          <text class='bg-green'></text>
+        </view>
+      </view>
+      <view class='cInfo'>
+        <view class='cMajor over-1-hidden'>
+          <text>班级名称：{{item.className}}</text>
+        </view>
+        <view class='float-right'>
+          <text class='cPeople'>{{item.student.length}}</text>
+          <text class='icon-peoplelist cMajImg'></text>
+        </view>
+      </view>
+      <!-- 加载更多 -->
+      <view class="cell" hidden='{{!moreLoadingHidden}}' wx:if="{{index + 1 == courses_list.length}}">
+        <w-indicator show color="#39b54a" text="正在加载..." size="small" type="ball" />
+      </view>
+      <view hidden='{{moreLoadingHidden}}' wx:if="{{index + 1 == courses_list.length}}">
+        <view class='get-more-ques' catchtap='getMoreT' wx:if='{{hasMoreT}}'>
+          点击加载更多
+        </view>
+        <view class='get-more-ques' catchtap='nothing' wx:else>已经到底了哦</view>
+      </view>
+    </view>
+  </van-tab>
+  <van-tab title="我加入的课程">
+    <view class='course bg-gradual-green shadow-lg' wx:for="{{myLisCourse}}" wx:key id='{{index}}' catchtap='onCourseDetail'>
+      <image class='clip' src="../../images/clip.png"></image>
+      <image class='c-arrow' src='../../images/forward.png'></image>
+      <view class="cu-bar bg-white">
+        <view class='action sub-title'>
+          <text class='text-xl text-bold text-green'>课程名称：{{item.courseName}}</text>
+          <text class='bg-green' style='width:150rpx'></text>
+        </view>
+      </view>
+      <view class='cInfo clearfix'>
+        <view class='cMajor over-1-hidden'>
+          <text>班级名称：{{item.className}}</text>
+        </view>
+        <view class='float-right'>
+          <text class='cPeople'>{{item.stuNum}}</text>
+          <text class='icon-peoplelist cMajImg'></text>
+        </view>
+      </view>
+
+      <!-- 加载更多 -->
+      <view class="cell" hidden='{{!moreLoadingHidden}}' wx:if="{{index + 1 == myLisCourse.length}}">
+        <w-indicator show color="#39b54a" text="正在加载..." size="small" type="ball" />
+      </view>
+      <view hidden='{{moreLoadingHidden}}' wx:if="{{index + 1 == myLisCourse.length}}">
+        <view class='get-more-ques' catchtap='getMoreL' wx:if='{{hasMoreL}}'>
+          点击加载更多
+        </view>
+        <view class='get-more-ques' catchtap='nothing' wx:else>已经到底了哦</view>
+      </view>
+    </view>
+  </van-tab>
+</van-tabs>
+
+<view class='bg-white flex-sub radius shadow-lg abs' hidden='hideGetCourseLoading'>
+  <image src='https://image.weilanwl.com/gif/loading-white.gif' mode='aspectFit' class='gif-white response' style='height:240rpx'></image>
+</view>

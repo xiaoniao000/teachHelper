@@ -1,0 +1,25 @@
+<!--pages/myTeaCourse/discussion/addPost/addPost.wxml-->
+<view class='page'>
+  <!-- 标题和内容 -->
+  <w-input wx:if="{{type}}" bind:onChange="titleChange" value='{{title}}' placeholder="这里输入" label="标题" clear>
+  </w-input>
+  <w-input clear count="100" type="textarea" placeholder="请输入内容" bind:onChange="contentChange" value='{{content}}' />
+
+  <!-- 添加图片 -->
+  <view class="cu-form-group margin-top" wx:if="{{type}}">
+    <view class="grid col-3 grid-square flex-sub">
+      <view class="padding-xs bg-img" wx:for="{{images}}" id="{{index}}" wx:key  style='background-image:url({{item}})' bindtap='onImagePreview'>
+        <view id="{{index}}" class="cu-tag bg-red" catchtap='removeImage'>
+          <text class='icon-close'></text>
+        </view>
+      </view>
+      <!-- 如果选了4张照片，就不显示添加图片框框 -->
+      <view class="padding-xs solids" bindtap='addPhoto' wx:if="{{images.length < 3}}">
+        <text class='icon-cameraadd'></text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 发布按钮 -->
+  <w-button ghost type="info" bind:onClick="submitForm">发布</w-button>
+</view>

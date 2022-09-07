@@ -1,0 +1,13 @@
+/* pages/myTeaCourse/preview/previewTitles/previewTitles.wxss */
+.prompt{
+  margin-top: 200rpx;
+  height: 400rpx;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.iconNoStatus{
+  font-size:170rpx;
+}

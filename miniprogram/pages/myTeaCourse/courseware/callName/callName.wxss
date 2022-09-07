@@ -1,0 +1,4 @@
+/* pages/myTeaCourse/courseware/callName/callName.wxss */
+.callNameBtn{
+text-align: center;
+}

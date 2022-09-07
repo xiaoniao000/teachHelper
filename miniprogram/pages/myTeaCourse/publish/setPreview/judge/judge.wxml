@@ -1,0 +1,16 @@
+<view class='single-choice-title'>
+  <view class='head'>题目</view>
+  <textarea class='body' style='height:200rpx;' placeholder='请输入题目' value='{{optionsTitle}}' bindinput='onInputTitle'></textarea>
+</view>
+<view class='head bgcolor'>设置</view>
+<view class='setting'>
+  <text>{{correctAnswer?'该题正确':'该题错误'}}</text>
+  <view class='w-cell'>
+    <w-cell label="Default">
+      <w-switch slot="content" value="{{ correctAnswer }}" bind:onChange="handleChange" />
+    </w-cell>
+  </view>
+</view>
+<button class='weui-btn submit' type='primary' bindtap='finishOptions'>确认</button>
+
+<i-toast id="toast" />

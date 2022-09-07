@@ -1,0 +1,46 @@
+/* pages/estCourse/estCourse.wxss */
+.estBox {
+  position: relative;
+  width: 540rpx;
+  height: 600rpx;
+  border-radius: 10rpx;
+  border: 2rpx solid #D8DEE2;
+  margin: 280rpx auto 0 auto;
+  background-color: #fff;
+}
+  .clip{
+    position: absolute;
+    left: -28px;
+    top: -28px;
+    width: 60px;
+    height: 60px;
+  }
+  .box-content{
+    margin: 60rpx 50rpx;
+  }
+    .box-content-card{
+      margin-bottom: 40rpx;
+    }
+      .input-item-label{
+        font-size: 30rpx;
+        padding-bottom: 10rpx;
+        font-weight: 900;
+      }
+      .input-item-content{
+        line-height: 55rpx;
+        height: 55rpx;
+        border: 2rpx solid #D1D5DA;
+        padding: 6rpx 16rpx;
+        border-radius: 6rpx;
+        font-size: 14px;
+      }
+  .finish{
+    line-height: 80rpx;
+    width: 50%;
+    background-color: #39b54a;
+    color: white;
+    border-radius: 12rpx;
+    height: 80rpx;
+    font-size: 30rpx;
+    margin-top: 90rpx;
+  }

@@ -1,0 +1,42 @@
+<!--pages/getCourse/getCourse.wxml-->
+<import src="/component/wxSearch/wxSearch.wxml" />
+
+<view class="cu-bar search bg-white">
+  <view class='search-form round'>
+    <text class="icon-search"></text>
+    <input type="text" placeholder="搜索课程名称" confirm-type="search" bindinput="wxSearchInput" value="{{wxSearchData.value}}" bindfocus="wxSerchFocus"></input>
+  </view>
+  <view class='action'>
+    <button class='cu-btn bg-green shadow-blur round' bindtap="wxSearchFn">搜索</button>
+  </view>
+</view>
+
+<template is="wxSearch" data="{{wxSearchData}}" />
+
+<view class='course bg-gradual-green shadow-lg' wx:for="{{courseSearched}}" wx:key id='{{index}}' catchtap='addCourse'>
+  <image class='clip' src="/images/clip.png"></image>
+  <image class='c-arrow' src='/images/addCourse.png'></image>
+  <view class="cu-bar bg-white">
+    <view class='action sub-title'>
+      <text class='text-xl text-bold text-green'>课程名称：{{item.courseName}}</text>
+      <text class='bg-green' style='width:4rem'></text>
+      <!-- last-child选择器-->
+    </view>
+  </view>
+  <view class='cInfo'>
+    <view class='cMajor over-1-hidden'>
+      <text>班级名称：{{item.className}}</text>
+    </view>
+    <view class='float-right'>
+      <text class='cPeople'>{{item.student.length}}</text>
+      <image class='cMajImg' src='/images/person.png'></image>
+    </view>
+  </view>
+</view>
+
+<!-- 提示窗 -->
+<view class='prompt' wx:if='{{courseSearched.length==0}}'>
+  <view class='icon-discoverfill text-blue iconNoStatus animation-{{animation}} '></view>
+  <view style='font-size:34rpx;font-weight:900 '>想加入什么课程</view>
+  <view class='text-gray '>快来搜索吧</view>
+</view>

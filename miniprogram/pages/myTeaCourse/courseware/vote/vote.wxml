@@ -1,0 +1,26 @@
+<!--pages/vote/vote.wxml-->
+<view class='page'>
+  <view class='blank'></view>
+  <view class='input'>
+    <textarea placeholder='请输入内容'></textarea>
+  </view>
+  <view class='radio'>
+    <input placeholder='选项一' class='input1'></input>
+    <view class='blank1'></view>
+    <input placeholder='选项二' class='input1'></input>
+  </view>
+  <view>
+    <text class='text2'>继续添加</text>
+    <image class='icon' src="/images/plus.png" />
+  </view>
+
+
+  <view class='line-css'></view>
+  <view class='move clearfix'>
+
+    <text class='text1'>最多可选</text>
+    <input class='shuru'></input>
+    <text class='text'>项</text>
+  </view>
+  <button class='but'>确认发布</button>
+</view>

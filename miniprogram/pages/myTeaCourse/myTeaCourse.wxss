@@ -1,0 +1,111 @@
+
+/* swiper preview */
+.page-hd{
+  background-color: #fff;
+  height: 88rpx;
+  line-height: 88rpx;
+  margin-bottom: 1rpx;
+}
+  .teacher{
+    float: left;
+    width: 160rpx;
+    height: 88rpx;
+    margin-left: 40rpx;
+  }
+    .person-img{
+      height: 32rpx;
+      width: 32rpx;
+      float: left;
+      margin-top: 28rpx;
+    }
+    .person-content{
+      color: #101010;
+      font-size: 14px;
+      float: left;
+      width: 126rpx;
+      padding-left: 10rpx;
+      height: 88rpx;
+    }
+  .watch-previewList{
+    width: 330rpx;
+    height: 60rpx;
+    border-radius: 8rpx;
+    background-color: #39b54a;
+    color: rgba(255, 255, 255, 1);
+    font-size: 14px;
+    float: right;
+    line-height: 60rpx;
+    margin-top: 14rpx;
+    margin-right: 20rpx;
+    text-align: center;
+  }
+.prompt{
+  margin-top: 200rpx;
+  height: 400rpx;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.iconNoStatus{
+  font-size:170rpx;
+}
+
+.animation-shake {
+  animation: shake 0.5s ease-out both;
+}
+@keyframes shake {
+    0%,
+    100% {
+        transform: translateX(0)
+    }
+    10% {
+        transform: translateX(-9px)
+    }
+    20% {
+        transform: translateX(8px)
+    }
+    30% {
+        transform: translateX(-7px)
+    }
+    40% {
+        transform: translateX(6px)
+    }
+    50% {
+        transform: translateX(-5px)
+    }
+    60% {
+        transform: translateX(4px)
+    }
+    70% {
+        transform: translateX(-3px)
+    }
+    80% {
+        transform: translateX(2px)
+    }
+    90% {
+        transform: translateX(-1px)
+    }
+}
+
+/* 上课  课件 */
+.cu-time{
+  font-weight: 800;
+}
+i-button button{
+  background-color: #fff;
+}
+
+.cu-timeline>.cu-item>.content{
+  position: relative
+}
+.coursewareCover{
+  position: absolute;
+  height: 120rpx;
+  width: 160rpx;
+  right: 30rpx;
+  top: 50%;
+  margin-top: -60rpx;
+  border-radius:6rpx;
+}

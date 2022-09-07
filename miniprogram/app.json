@@ -1,0 +1,92 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/course/course",
+    "pages/course/estCourse/estCourse",
+    "pages/course/getCourse/getCourse",
+    "pages/notice/notice",
+    "pages/notice/noticeDetail/noticeDetail",
+    "pages/notice/privateNews/privateNews",
+    "pages/mine/mine",
+    "pages/myTeaCourse/myTeaCourse",
+    "pages/myTeaCourse/courseware/courseware",
+    "pages/myTeaCourse/courseware/callName/callName",
+    "pages/myTeaCourse/courseware/sendProb/sendProb",
+    "pages/myTeaCourse/courseware/sendProb/judge/judge",
+    "pages/myTeaCourse/courseware/sendProb/choice/choice",
+    "pages/myTeaCourse/courseware/sendProb/shortAnswer/shortAnswer",
+    "pages/myTeaCourse/courseware/sign/sign",
+    "pages/myTeaCourse/courseware/vote/vote",
+    "pages/myTeaCourse/discussion/discussion",
+    "pages/myTeaCourse/discussion/addPost/addPost",
+    "pages/myTeaCourse/homework/homeworkTitles/homeworkTitles",
+    "pages/myTeaCourse/preview/previewTitles/previewTitles",
+    "pages/myTeaCourse/preview/resultChart/resultChart",
+    "pages/myTeaCourse/publish/setAnnounce/setAnnounce",
+    "pages/myTeaCourse/publish/setCourseware/setCourseware",
+    "pages/myTeaCourse/publish/setHomework/setHomework",
+    "pages/myTeaCourse/publish/setHomework/choice/choice",
+    "pages/myTeaCourse/publish/setHomework/judge/judge",
+    "pages/myTeaCourse/publish/setHomework/shortAnswer/shortAnswer",
+    "pages/myTeaCourse/publish/setPreview/setPreview",
+    "pages/myTeaCourse/publish/setPreview/judge/judge",
+    "pages/myTeaCourse/publish/setPreview/choice/choice",
+    "pages/myTeaCourse/publish/setPreview/shortAnswer/shortAnswer",
+    "pages/myLisCourse/myLisCourse",
+    "pages/myLisCourse/announce/announce",
+    "pages/myLisCourse/courseware/courseware",
+    "pages/myLisCourse/courseware/sign/sign",
+    "pages/myLisCourse/courseware/watchProb/watchProb",
+    "pages/myLisCourse/discussion/discussion",
+    "pages/myLisCourse/discussion/addPost/addPost",
+    "pages/myLisCourse/fileDetail/fileDetail",
+    "pages/myLisCourse/preview/preview"
+
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "教学小助手",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "van-tab": "vant-weapp/tab/index",
+    "van-tabs": "vant-weapp/tabs/index",
+    "van-popup": "vant-weapp/popup/index",
+    "van-row": "vant-weapp/row/index",
+    "van-col": "vant-weapp/col/index",
+    "van-tag": "vant-weapp/tag/index",
+    "w-button": "wuss-weapp/w-button/index",
+    "w-input": "wuss-weapp/w-input/index",
+    "w-drop-menu": "wuss-weapp/w-drop-menu/index",
+    "w-card": "wuss-weapp/w-card/index",
+    "wux-fab-button": "./dist/fab-button/index",
+    "w-switch": "wuss-weapp/w-switch/index",
+    "i-load-more": "./dist/iview/load-more/index"
+  },
+  "tabBar": {
+    "selectedColor": "#39b54a",
+    "list": [
+      {
+        "pagePath": "pages/course/course",
+        "text": "课程",
+        "iconPath": "/images/course.png",
+        "selectedIconPath": "/images/courseSelected.png"
+      },
+      {
+        "pagePath": "pages/notice/notice",
+        "text": "消息",
+        "iconPath": "/images/notice.png",
+        "selectedIconPath": "/images/noticeS.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "/images/mine.png",
+        "selectedIconPath": "/images/mineS.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

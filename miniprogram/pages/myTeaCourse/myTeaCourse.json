@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "我教的课",
+  "usingComponents": {
+    "wux-button": "../../dist/button/index",
+    "i-modal": "../../dist/iview/modal/index",
+    "wux-dialog": "../../dist/dialog/index"
+  }
+}

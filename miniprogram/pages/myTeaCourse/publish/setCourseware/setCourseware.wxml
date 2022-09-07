@@ -1,0 +1,21 @@
+<!--pages/myTeaCourse/publish/setCourseware/setCourseware.wxml-->
+<view class='out'>
+  <view class='courseware'>
+    <view>
+      <view class='text1'>选择上传课件类型</view>
+    </view>
+
+    <view>
+      <view class='area1'></view>
+      <view class='area'>
+        <image src='/images/ppt.jpg'></image>
+        <view class='text'>PPT</view>
+      </view>
+      <view class='area2'></view>
+      <view class='area'>
+        <image src='/images/paper.jpg'></image>
+        <view class='text'>TEXT</view>
+      </view>
+    </view>
+  </view>
+</view>

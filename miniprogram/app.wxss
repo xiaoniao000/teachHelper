@@ -1,0 +1,31 @@
+/**app.wxss**/
+@import 'style/weui.wxss';
+@import "style/icon.wxss";
+@import "style/colorui.wxss";
+
+
+page {
+  background-color: #f9f9f9;
+}
+
+.clearfix::after {
+  content: " ";
+  clear: both;
+  height: 0px;
+  display: block;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.over-1-hidden {
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  align-content: center;
+}

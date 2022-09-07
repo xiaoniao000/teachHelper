@@ -1,0 +1,65 @@
+/**index.wxss**/
+
+/* 授权 */
+
+.authority {
+  padding: 20rpx;
+  margin: auto 20rpx;
+  margin-top: 370rpx;
+  background-color: #fff;
+}
+.tip1{
+  font-size: 26rpx;
+}
+.tip2{
+  font-size: 22rpx;
+  color: gray;
+}
+
+/* 正在加载 */
+
+.showLoading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+/* 点击进入 */
+
+.welcome {
+  font-size: 34rpx;
+  line-height: 80rpx;
+  padding-left: 46rpx;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+  font-size: 34rpx;
+}

@@ -1,0 +1,90 @@
+<w-input bind:onChange="nameChange" label="测验标题" focus value='{{name}}' placeholder="请输入" />
+<view class='action bar'>
+  <text class='icon-title text-green '></text> 题目列表
+</view>
+
+<view data-tid='{{item.tid}}' class='title' wx:for='{{titles}}' wx:key='{{item.tid}}' bindtap='onChangetitle'>
+  <view class='padding'>
+    <view class='title-head'>
+      <text style='font-weight:900'>{{item.tid}}</text>.
+      <text class='title-content'>{{item.title}}：</text>
+    </view>
+    <view class='title-body'>
+      <!-- 题目类型  0单选1多选2判断3简答 -->
+      <view wx:if="{{item.typeId == 3 }}">
+        <view class='textarea'></view>
+      </view>
+      <view wx:if="{{item.typeId == 2 }}" class='answer'>
+        <text class='{{item.correctAnswer?"icon-roundcheckfill text-green":"icon-round"}} circle'></text>正确
+        <text class='{{!item.correctAnswer?"icon-roundcheckfill text-green":"icon-round"}} circle'></text>错误
+      </view>
+      <view wx:if="{{item.typeId == 1 ||item.typeId == 0}}" class='answer' wx:for='{{item.options}}' wx:key wx:for-item='options'>
+        <text class='{{item.typeId?item.correctAnswer[index]?"icon-squarecheckfill text-green":"icon-square" : item.correctAnswer==index?"icon-roundcheckfill text-green":"icon-round"}} circle'></text> {{options}}
+      </view>
+    </view>
+  </view>
+
+  <!-- 每道题目的编辑层 -->
+  <view class='change-title' wx:if='{{item.onChange}}'>
+    <view class='part' catchtap='changetitle' data-tid='{{item.tid}}' data-type-id='{{item.typeId}}'>
+      <text class='change-title-img icon-post'></text>
+      <view class='edit-title-text'>编辑</view>
+    </view>
+    <view class='part' catchtap='uptitle' data-tid='{{item.tid}}'>
+      <text class='change-title-img icon-pullup'></text>
+      <view class='edit-title-text'>上移</view>
+    </view>
+    <view class='part' catchtap='downtitle' data-tid='{{item.tid}}'>
+      <text class='change-title-img icon-pulldown'></text>
+      <view class='edit-title-text'>下移</view>
+    </view>
+    <view class='part' catchtap='deletetitle' data-tid='{{item.tid}}'>
+      <text class='change-title-img icon-delete'></text>
+      <view class='edit-title-text'>删除</view>
+    </view>
+  </view>
+</view>
+
+<view style='height:60rpx'></view>
+<!-- 添加题目 -->
+<van-row>
+  <van-col span="6" offset="2" custom-class='func shadow-warp'>
+    <view bindtap='onChoice'>
+      <text class='icon-radiobox' style='font-size:48rpx;'></text>
+      <view class='func-text'>选择题</view>
+    </view>
+  </van-col>
+  <van-col span="6" offset="1" custom-class='func shadow-warp'>
+    <view bindtap='onJudge'>
+      <text class='icon-roundcheck' style='font-size:48rpx;'></text>
+      <view class='func-text'>判断题</view>
+    </view>
+  </van-col>
+  <van-col span="6" offset="1" custom-class='func shadow-warp'>
+    <view bindtap='onShortAnswer'>
+      <text class='icon-question' style='font-size:48rpx;'></text>
+      <view class='func-text'>简答题</view>
+    </view>
+  </van-col>
+</van-row>
+
+<view style='height:168rpx;'></view>
+
+<view class="cu-bar tabbar bg-white positionatbottom">
+  <view class="action text-gray" bindtap='saveHomework'>
+    <view class='icon-edit'></view> 保存
+  </view>
+  <view class="action text-gray" bindtap='viewHomework'>
+    <view class='icon-attention'></view> 预览
+  </view>
+  <view class="action text-gray add-action">
+    <button class='cu-btn {{!homework.isPublished?"icon-add":"icon-move"}} bg-green shadow' bindtap='onPublish'></button>
+    {{!homework.isPublished?"发布":"暂停"}}
+  </view>
+  <view class="action text-gray" bindtap='deleteHomework'>
+    <view class='icon-delete'></view>删除
+  </view>
+  <view class="action text-gray">
+    <view class='icon-settings'></view>设置
+  </view>
+</view>

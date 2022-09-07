@@ -1,0 +1,12 @@
+<!-- pages/myTeaCourse/courseware/callName/callName.wxml -->
+<view style='height:300rpx;'></view>
+<view class="tower-swiper" bindtouchmove="towerMove" bindtouchstart="towerStart" bindtouchend="towerEnd">
+  <view class='tower-item' wx:for="{{tower}}" wx:key style='transform: scale({{0.5+item.zIndex/10}});margin-left:{{item.mLeft*100-150}}rpx;z-index:{{item.zIndex}}'>
+    <view class='bg-img shadow-blur' style="background-image:url({{item.avatarUrl}})"></view>
+  </view>
+</view>
+<view style='height:100rpx;'></view>
+<view class='callNameBtn'>
+  <van-button disabled="{{!parse}}" type="primary" bind:click='callNameTap'>开始</van-button>
+  <van-button disabled="{{parse}}" type="primary" bind:click='callNameStop'>暂停</van-button>
+</view>

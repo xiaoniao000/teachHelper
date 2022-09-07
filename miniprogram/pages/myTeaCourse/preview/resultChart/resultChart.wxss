@@ -1,0 +1,16 @@
+/* pages/myTeaCourse/preview/resultChart/resultChart.wxss */
+
+/* 图表 */
+.chart-title{
+  background-color: #fff;
+  height: 40px;
+  color: #101010;
+  border-bottom: 1px solid #EAEAEA;
+  line-height: 40px;
+  padding-left: 10px;
+  font-size: 14px;
+}
+  .canvas {
+    width: 100%;
+    height: 600rpx;
+  }

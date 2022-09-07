@@ -1,0 +1,45 @@
+<!--pages/mine/mine.wxml-->
+<view class='UCenter-bg'>
+  <image src='{{userInfo.avatarUrl}}' class='avatar' mode='widthFix'></image>
+  <view class='margin-top-sm text-xl'>
+    <text style='font-weight:800;'>{{userInfo.nickName}}</text>
+  </view>
+  <view class=''>教学小助手
+    <text class='text-df'>v3.0</text>
+  </view>
+  <image src='https://image.weilanwl.com/gif/wave.gif' mode='scaleToFill' class='gif-wave'></image>
+</view>
+<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg">
+  <view class="cu-item arrow">
+    <view class='content' bindtap='CopyLink'>
+      <text class='icon-myfill text-blue'></text>
+      <text class='text-grey'>身份绑定</text>
+    </view>
+  </view>
+  <view class="cu-item arrow">
+    <navigator class='content' url='../about/about' hover-class='none'>
+      <text class='icon-favorfill text-yellow'></text>
+      <text class='text-grey'>我的收藏</text>
+    </navigator>
+  </view>
+  <view class="cu-item arrow">
+    <view class='content' bindtap="showQrcode">
+      <text class='icon-formfill text-red'></text>
+      <text class='text-grey'>错题整理</text>
+    </view>
+  </view>
+  <view class="cu-item arrow">
+    <button class='cu-btn content' open-type='feedback'>
+      <text class='icon-writefill text-cyan'></text>
+      <text class='text-grey'>意见反馈</text>
+    </button>
+  </view>
+  <view class="cu-item arrow">
+    <navigator class='content' url='../test/list' hover-class='none'>
+      <text class='icon-settingsfill text-orange'></text>
+      <text class='text-grey'>设置</text>
+    </navigator>
+  </view>
+</view>
+
+<view class='cu-tabbar-height'></view>

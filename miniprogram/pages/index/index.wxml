@@ -1,0 +1,33 @@
+<!--index.wxml-->
+<view class='authority shadow-warp' wx:if="{{!showLoading}}">
+  <view class="cu-avatar lg round margin-left" style="background-image:url(http://img0.ph.126.net/xU2zqpWbmMYODBRYeRZEJw==/1834372423323563766.jpg);"></view>
+  <text class='welcome'>欢迎来到趣学数学</text>
+  <view style="margin:60rpx 0;">
+    <view class='tip1'>为提供优质的服务，趣学数学需要获取以下信息</view>
+    <view class='tip2'> · 你的公开信息(昵称、头像等)</view>
+  </view>
+
+  <wux-button block type="balanced" openType="getUserInfo" bind:getuserinfo="getUserInfo" disabled='{{showLoading}}'> {{showLoading?'已授权':'授权微信小程序'}}</wux-button>
+</view>
+
+
+<view class="flex" style='margin-top:400rpx;' wx:if="{{showLoading}}">
+  <view class='flex-sub radius'>
+    <image src='https://image.weilanwl.com/gif/loading-white.gif' mode='aspectFit' class='gif-white response' style='height:240rpx'></image>
+  </view>
+</view>
+
+<!-- <view class="container">
+  <view class="userinfo">
+    <block wx:if="{{hasUserInfo && canIUse}}">
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <vpush-view></vpush-view>
+  <vpush-checkin title="你好" desc="欢迎来到教学小助手" />
+  <navigator wx:if="{{hasUserInfo}}" class="usermotto" open-type='switchTab' url='../course/course'>
+    <text>欢迎使用教学小助手</text>
+    <view style='text-align:center'>点击进入</view>
+  </navigator>
+</view> -->

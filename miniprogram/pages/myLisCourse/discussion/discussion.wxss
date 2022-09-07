@@ -1,0 +1,74 @@
+/* pages/myTeaCourse/discussion/discussion.wxss */
+.post-card{
+  position: relative
+}
+
+  .extra{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 30px;
+    height: 30px;
+    z-index: 0;
+  }
+  .extraDetail{
+    position: absolute;
+    height: 100px;
+    width: 80px;
+    top: 35px;
+    right: 15px;
+    font-size: 14px;
+    line-height: 33px;
+    background-color: #fff;
+    box-shadow: 1px 1px 1px 0px rgb(224, 224, 224);
+    border:  1px solid rgb(224, 224, 224);
+    border-radius: 3px;
+    text-align: center;
+    z-index: 1;
+  }
+    .ex-de-line{
+      border-bottom: 1px solid  rgb(224, 224, 224);
+    }
+
+  .userInfo{
+    height: 60px;
+    font-size: 12px;
+  }
+    .img-box{
+      float: left;
+      height: 40px;
+      width: 40px;
+      margin: 10px 12px 0px 12px;
+      border-radius: 50px;
+    }
+      .user-img{
+        width: 40px;
+        height: 40px;
+        border-radius: 50px;
+      }
+    .user-name{
+      padding-top: 8px;
+    }
+    .user-time{
+      padding-top: 5px;
+    }
+
+  .post-content{
+    font-size: 14px;
+    width: 90%;
+    margin: 0 auto 15px auto;
+    word-break:break-all;
+
+  }
+
+  .blank{
+    height: 6px;
+    background-color: #F9F9F9;
+  }
+
+
+
+  .blank2{
+    height: 2px;
+    background-color: #F9F9F9;
+  }

@@ -1,0 +1,25 @@
+/* pages/myTeaCourse/publish/setPreview/shortAnswer/shortAnswer.wxss */
+.single-choice-title{
+  background-color: white;
+  padding-bottom: 1rpx;
+}
+  .head{
+    font-size: 22rpx;
+    padding-left: 30rpx;
+    color: #949494;
+    padding-right: 60rpx;
+  }
+  .body{
+    margin: 16rpx auto 40rpx auto;
+    width: 85%;
+    border: 1rpx solid #ccc;
+    padding: 20rpx;
+    color: #949494;
+    border-radius: 10rpx;
+    height: 160rpx;
+    line-height: 30rpx;
+    font-size: 28rpx;
+  }
+.submit{
+  width: 86%;
+}

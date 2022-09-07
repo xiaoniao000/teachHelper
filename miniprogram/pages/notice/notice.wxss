@@ -1,0 +1,40 @@
+/* pages/notice/notice.wxss */
+
+.page {
+  background-color: whitesmoke;
+  height: 100%;
+}
+.blank{
+  height: 30rpx;
+}
+/* private-news */
+.private-news{
+  height: 190rpx;
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+}
+  .padding{
+    padding: 40rpx 30rpx;
+  }
+    .icon-envelope{
+      font-size: 64rpx;
+      float: left;
+      text-align: center;
+    }
+    .content{
+      float: left;
+      padding-left: 40rpx;
+      
+    }
+      .con-head{
+        font-size: 16px;
+        padding-top: 10rpx;
+        font-weight: 900;
+      }
+      .con-body{
+        font-size: 14px;
+        color: #868585; 
+        
+      }
+  

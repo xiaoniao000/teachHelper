@@ -1,0 +1,29 @@
+<view class='single-choice-title'>
+  <view class='head'>题目</view>
+  <textarea class='body' style='height:200rpx;' placeholder='请输入题目' value='{{optionsTitle}}' bindinput='onInputTitle'></textarea>
+</view>
+<view class='options' wx:if="{{typeId != 2}}">
+  <view class='head bgcolor'>选项
+    <text class='float-right'>正确答案</text> </view>
+  <view wx:for='{{options.length}}' wx:key='' class='input-options width'>
+    <text id="{{index}}" class='remove-options icon-roundclose text-red' bindtap='removeOptions'></text>
+    <input id='{{index}}' class='input-text' placeholder='输入选项' value='{{options[index]}}' bindinput='onInputContent'></input>
+    <text id='{{index}}' class='{{typeId?correctAnswers[index]?"icon-squarecheckfill text-green":"icon-squarecheck" : correctAnswer==index?"icon-roundcheckfill text-green":"icon-roundcheck"}}  float-right' style='font-size:36rpx;' catchtap='chooseAnswer'></text>
+  </view>
+  <view class='add-options width' bindtap='addOptions'>
+    <text class='remove-options icon-roundadd text-blue'></text>
+    <text class='add-text'>添加选项</text>
+  </view>
+</view>
+<view class='head bgcolor'>设置</view>
+<view class='setting'>
+  <text>{{typeId?'切换为单选题':'切换为多选题'}}</text>
+  <view class='w-cell'>
+    <w-cell label="Default">
+      <w-switch slot="content" value="{{ typeId }}" bind:onChange="handleChange" />
+    </w-cell>
+  </view>
+</view>
+<button class='weui-btn submit' type='primary' bindtap='finishOptions'>确认</button>
+
+<i-toast id="toast" />
